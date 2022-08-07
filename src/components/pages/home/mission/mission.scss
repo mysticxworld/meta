@@ -1,0 +1,71 @@
+@import "../../../../scss/mixin.scss";
+.missionOuter{
+    padding: 25px 0;
+    .missionInn{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include respond-to(media-sm) {
+            display: block;
+        }
+        .missionLeft{
+            background: url(../../../../assets/images/missionBg.png) center center no-repeat;
+            padding: 50px 0;
+            width: 463px;
+            position: relative;
+            line-height: 0;
+            @include respond-to(media-md) {
+                width: 350px;
+                background-size: 100% 100%;
+            }
+            @include respond-to(media-sm) {
+                width: 100%;
+            }
+            img{
+                max-width: 100%;
+            }
+            button{
+                position: absolute;
+                left: 50%;
+                top:50%;
+                transform: translate(-50%, -50%);
+                background: transparent;
+                border: 0;
+            }
+        }
+        .missionRight{
+            width: 55%;
+            @include respond-to(media-lg) {
+                width: 48%;
+            }
+            @include respond-to(media-sm) {
+                width: 100%;
+                margin-top: 20px;
+            }
+            h2{
+                font-size: 44px;
+                font-weight: 800;
+                padding-bottom: 20px;
+                @include respond-to(media-lg) {
+                    font-size: 34px;
+                    padding-bottom: 10px;
+                }
+                @include respond-to(media-xs) {
+                    font-size: 30px;
+                    padding-bottom: 5px;
+                }
+            }
+            p{
+                font-size: 18px;
+                color: #616161;
+                padding-bottom: 20px;
+                @include respond-to(media-lg) {
+                    padding-bottom: 0;
+                }
+                @include respond-to(media-xs) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

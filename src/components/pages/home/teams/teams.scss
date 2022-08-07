@@ -1,0 +1,76 @@
+@import "../../../../scss/mixin.scss";
+.teamsOuter{
+    padding: 70px 0;
+    @include respond-to(media-sm) {
+        padding: 30px 0;
+    }
+    .teamsHd {
+        text-align: center;
+        max-width: 840px;
+        margin: 0 auto;
+        h2{
+            font-size: 44px;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 50px;
+            @include respond-to(media-sm) {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+            @include respond-to(media-xs) {
+                font-size: 30px;
+            }
+            span{
+                display: block;
+                width: 100px;
+                height: 4px;
+                margin: 10px auto 0 auto;
+                background: #8cc641;
+            }
+        }
+    }
+    .teamsList {
+        ul {
+            text-align: center;
+            li {
+                display: inline-grid;
+                margin: 0 30px;
+                @include respond-to(media-xl) {
+                    margin: 0 25px;
+                }
+                @include respond-to(media-md) {
+                    margin: 0 10px;
+                }
+                @include respond-to(media-sm) {
+                    margin: 0 15px 20px 15px;
+                }
+                i{
+                    display: block;
+                    width: 132px;
+                    height: 132px;
+                    border-radius: 50%;
+                    background: #ffe8db;
+                    margin-bottom: 10px;
+                    @include respond-to(media-md) {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+                strong{
+                    display: block;
+                    font-size: 18px;
+                    @include respond-to(media-lg) {
+                        font-size: 15px;
+                    }
+                }
+                span{
+                    display: block;
+                    font-size: 14px;
+                    @include respond-to(media-md) {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

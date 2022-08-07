@@ -1,0 +1,243 @@
+@import "../../../../scss/mixin.scss";
+.roadmapOuter{
+    background: url(../../../../assets/images/roadmap-bg.png) center center no-repeat;
+    padding: 95px 0 135px 0;
+    background-size: cover;
+    @include respond-to(media-lg) {
+        padding: 50px 0 80px 0;
+    }
+    .roadmapCont{
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        h2{
+            font-size: 44px;
+            font-weight: 800;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 10px;
+            @include respond-to(media-sm) {
+                font-size: 36px;
+            }
+            @include respond-to(media-xs) {
+                font-size: 30px;
+                padding-bottom: 20px;
+            }
+        }
+        .roadmapList{
+            background: url(../../../../assets/images/bdrBg.png) center top repeat-y;
+            padding: 104px 0 35px 0;
+            position: relative;
+            @include respond-to(media-lg) {
+                max-width: 735px;
+                margin: 0 auto;
+            }
+            @include respond-to(media-sm) {
+                background-position: left 50px top;
+            }
+            @include respond-to(media-xs) {
+                background-position: left 26px top;
+            }
+            &:before{
+                width: 105px;
+                height: 4px;
+                background: #1dbf73;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                content: '';
+                margin-left: -53px;
+                @include respond-to(media-sm) {
+                    width: 80px;
+                    margin-left: 10px;
+                    left: 0;
+                }
+                @include respond-to(media-xs) {
+                    width: 50px;
+                    margin-left: 3px;
+                    left: 0;
+                }
+            }
+            &:after{
+                width: 105px;
+                height: 4px;
+                background: #1dbf73;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                content: '';
+                margin-left: -53px;
+                @include respond-to(media-sm) {
+                    width: 80px;
+                    margin-left: 10px;
+                    left: 0;
+                }
+                @include respond-to(media-xs) {
+                    width: 50px;
+                    margin-left: 3px;
+                    left: 0;
+                }
+            }
+            i.yearTag {
+                width: 72px;
+                height: 72px;
+                background: #1dbf73;
+                display: inline-block;
+                text-align: center;
+                line-height: 72px;
+                border-radius: 72px;
+                font-style: normal;
+                font-weight: 600;
+                position: absolute;
+                top: 39px;
+                left: 50%;
+                margin-left: -36px;
+                color: #fff;
+                font-size: 19px;
+                font-weight: 500;
+                @include respond-to(media-sm) {
+                    width: 60px;
+                    height: 60px;
+                    top: 30px;
+                    margin-left: 20px;
+                    left: 0;
+                    line-height: 60px;
+                }
+                @include respond-to(media-xs) {
+                    width: 50px;
+                    height: 50px;
+                    top: 30px;
+                    margin-left: 2px;
+                    left: 0;
+                    line-height: 50px;
+                    font-size: 16px;
+                }
+            }
+            ul{
+                li{
+                    .rodmapLft {
+                        width: 345px;
+                        @include respond-to(media-lg) {
+                            width: 302px;
+                        }
+                        @include respond-to(media-sm) {
+                            width: calc(100% - 80px);
+                            margin-left: 80px;
+                        }
+                        @include respond-to(media-xs) {
+                            width: calc(100% - 55px);
+                            margin-left: 55px;
+                        }
+                    }
+                    .rodmapRgt{
+                        display: inline-block;
+                    }
+                    .rodmapBx {
+                        background: #1dbf73;
+                        padding: 20px;
+                        border-radius: 10px;
+                        text-align: left;
+                        margin-bottom: 20px;
+                        h3{
+                            color: #fff;
+                            font-size: 20px;
+                        }
+                        ul{
+                            list-style: disc;
+                            color: #fff;
+                            margin-left: 20px !important;
+                            li{
+                                font-size: 14px;
+                                color: #fff;
+                                line-height: 21px;
+                            }
+                        }
+                    }
+                }
+                .rhtalign{
+                    text-align: right;
+                    @include respond-to(media-sm) {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+.rodmapLft.rodmapBx{
+    position: relative;
+    width: 345px;
+    
+    &:after{
+        background: #1dbf73;
+        content: '';
+        position: absolute;
+        right: -65px;
+        width: 65px;
+        height: 3px;
+        top: 72px;
+        @include respond-to(media-sm) {
+            right: auto;
+            left: -39px;
+        }
+    }
+    &:before{
+        background: #0b1121;
+        content: "";
+        position: absolute;
+        right: -75px;
+        width: 20px;
+        height: 20px;
+        top: 63px;
+        border-radius: 50%;
+        border: #1dbf73 solid 4px;
+        z-index: 9;
+        @include respond-to(media-sm) {
+            right: auto;
+            left: -39px;
+        }
+    }
+}
+.rodmapRgt.rodmapBx{
+    position: relative;
+    width: 307px;
+    @include respond-to(media-lg) {
+        width: 264px;
+    }
+    @include respond-to(media-sm) {
+        width: calc(100% - 80px);
+        margin-left: 80px;
+    }
+    @include respond-to(media-xs) {
+        width: calc(100% - 55px);
+        margin-left: 55px;
+    }
+    &:after{
+        background: #1dbf73;
+        content: '';
+        position: absolute;
+        left: -102px;
+        width: 102px;
+        height: 3px;
+        top: 72px;
+        @include respond-to(media-sm) {
+            left: -39px;
+            width: 102px;
+        }
+    }
+    &:before{
+        background: #0b1121;
+        content: "";
+        position: absolute;
+        left: -114px;
+        width: 20px;
+        height: 20px;
+        top: 63px;
+        border-radius: 50%;
+        border: #1dbf73 solid 4px;
+        z-index: 9;
+        @include respond-to(media-sm) {
+            left: -39px;
+        }
+    }
+}

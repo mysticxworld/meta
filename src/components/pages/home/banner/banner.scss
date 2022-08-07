@@ -1,0 +1,368 @@
+@import "../../../../scss/mixin.scss";
+.BannerOuter{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 668px;
+    @include respond-to(media-md) {
+        height: 610px;
+    }
+    @include respond-to(media-sm) {
+        height: auto;
+        display: block;
+    }
+    .bannerLeft{
+        width: 50%;
+        background: url(../../../../assets/images/banner-img.png) center center no-repeat;
+        background-size: cover;
+        position: relative;
+        @include respond-to(media-sm) {
+            width: 100%;
+            height: 500px;
+        }
+        @include respond-to(media-xs) {
+            height: 400px;
+        }
+        .banLftBx {
+            max-width: 570px;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 0;
+            @include respond-to(media-lg) {
+                padding-left: 15px;
+            }
+            @include respond-to(media-sm) {
+                width: 100%;
+                max-width: 100%;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+            h2{
+                font-size: 37px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 800;
+                padding-bottom: 30px;
+                @include respond-to(media-md) {
+                    font-size: 28px;
+                }
+                @include respond-to(media-xs) {
+                    font-size: 24px;
+                    padding-bottom: 15px;
+                    line-height: 35px;
+                }
+            }
+            button{
+                background: #1dbf73;
+                height: 44px;
+                width: 144px;
+                border-radius: 3px;
+                color: #fff;
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: 600;
+                border: 0;
+                transition: all 0.5s ease-in-out;
+                &:hover{
+                    background: #fff;
+                    color: #1dbf73;
+                }
+            }
+        }
+    }
+    .bannerRight{
+        width: 50%;
+        background: #1dbf73;
+        position: relative;
+        @include respond-to(media-sm) {
+            width: 100%;
+            padding: 30px 0;
+        }
+        
+        .tokensListOuter {
+            max-width: 570px;
+            width: 100%;
+            padding-left: 55px;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            @include respond-to(media-lg) {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            @include respond-to(media-sm) {
+                position: relative;
+                top: 0;
+                transform: translate(0, 0);
+            }
+            .tokensOuter{
+                margin-top: 50px;
+                position: relative;
+                @include respond-to(media-sm) {
+                    margin-top: 0;
+                }
+                .tokensScroll{
+                    height: 430px !important;
+                    width: 100% !important;
+                    > div + div + div{
+                        background: #1da265;
+                        width: 10px !important;
+                        border-radius: 0 !important;
+                        right: 0px !important;
+                        > div{
+                            background: #fff !important;
+                        }
+                    }
+                }
+                ul{
+                    padding-right: 15px !important;
+                    @include respond-to(media-sm) {
+                        padding-right: 0 !important;
+                    }
+                    li{
+                        background: #fff;
+                        border-radius: 10px;
+                        margin-bottom: 10px;
+                        padding: 15px 20px;
+                        transition: all 0.5s ease-in-out; 
+                        &:hover{
+                            background: #000000;
+                            .tokenLeft {
+                                strong{
+                                    color: #fff;
+                                }
+                            }
+                            .tokenRight {
+                                span{
+                                    color: #fff;
+                                }
+                            }
+                        }
+                        .tokensOut {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: stretch;
+                            .tokenLeft {
+                                width: 60%;
+                                span{
+                                    display: block;
+                                    font-size: 16px;
+                                    color: #1dbf73;
+                                    font-weight: 700;
+                                    text-transform: uppercase;
+                                }
+                                strong{
+                                    display: block;
+                                    text-transform: uppercase;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
+                            }
+                            .tokenRight {
+                                width: 40%;
+                                text-align: right;
+                                text-transform: uppercase;
+                                span{
+                                    display: block;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    line-height: 21px;
+                                    padding-bottom: 3px;
+                                    img{
+                                        display: inline-block;
+                                        margin-right: 5px;
+                                        vertical-align: top;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .bggradient{
+                    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100&1+0,0+100;Blue+to+Transparent */
+                    background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(29,191,115,1) 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(29,191,115,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(29,191,115,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#1dbf73',GradientType=0 ); /* IE6-9 */
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 56px;
+                }
+            }
+            .sacrifcBtn{
+                padding-top: 30px;
+                button{
+                    width: 97px;
+                    height: 35px;
+                    background: #fff;
+                    border-radius: 3px;
+                    color: #000;
+                    font-size: 14px;
+                    border: 0;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    transition: all 0.5s ease-in-out;
+                    box-shadow: none !important;
+                    &:hover{
+                        background: #000;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*************/
+.modalOuter{
+    max-width: 555px !important;
+    width: 100% !important;
+    @include respond-to(media-sm) {
+        width: auto !important;
+    }
+    .modal-header {
+        border-bottom: 0;
+        padding: 0;
+        position: relative;
+        button.btn-close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+    }
+    .modal-body{
+        padding: 30px 60px;
+        @include respond-to(media-sm) {
+            padding: 30px;
+        }
+        @include respond-to(media-sm) {
+            padding:40px 20px 30px  20px;
+        }
+        @include respond-to(media-xs) {
+            padding:40px 20px 10px  20px;
+        }
+        .sacrificBx{
+            h2{
+                font-size: 33px;
+                font-weight: 800;
+                @include respond-to(media-xs) {
+                    font-size: 24px;
+                }
+            }
+            p{
+                font-size: 16px;
+                color: #616161;
+                @include respond-to(media-xs) {
+                    font-size: 14px;
+                }
+            }
+            .scrifiBtn{
+                padding-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                button{
+                    width: 50px;
+                    height: 50px;
+                    background: #f6f5fd;
+                    border: 0 !important;
+                    border-radius: 5px;
+                    font-size: 17px;
+                    font-weight: 700;
+                    @include respond-to(media-xs) {
+                        width: 35px;
+                        height: 35px;
+                        font-size: 14px;
+                    }
+                    
+                    &:hover{
+                        background: #1dbf73;
+                        color: #fff;
+                    }
+                }
+            }
+            .scrifValue{
+                padding-bottom: 20px;
+                .scrifInp{
+                    width: 100%;
+                    height: 50px;
+                    background: #f6f5fd;
+                    border-radius: 5px;
+                    border: 0 !important;
+                    padding: 0 15px;
+                    color: #000;
+                    @include respond-to(media-xs) {
+                        height: 40px;
+                        padding: 0 10px;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .srcfBtnBx{
+                padding-bottom: 20px;
+                @include respond-to(media-xs) {
+                    padding-bottom: 10px;
+                }
+                button{
+                    background: #1dbf73;
+                    width: 144px;
+                    height: 44px;
+                    font-size: 14px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    border: 0;
+                    border-radius: 5px;
+                    font-weight: 700;
+                    box-shadow: none !important;
+                    &:hover{
+                        background: #000;
+                    }
+                }
+            }
+        }
+    }
+    .modal-footer {
+        border: 0;
+        padding: 0;
+        position: relative;
+        z-index: 99;
+        .popcloseBtn {
+            position: absolute;
+            background: #e5e5e5;
+            color: #000000;
+            font-size: 17px;
+            font-weight: 700;
+            border: 0;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            top: 5px;
+            right: 5px;
+        }
+    }
+    /*--------Thank you Message-----------*/
+    .thankyouMsg {
+        text-align: center;
+        padding: 100px 0 30px 0;
+        @include respond-to(media-xs) {
+            padding: 50px 0 30px 0;
+        }
+        h2{
+            font-size: 60px;
+            color: #0b854b;
+            font-weight: 700;
+            padding-bottom: 20px;
+            @include respond-to(media-xs) {
+                font-size: 40px;
+            }
+        }
+        p{
+            font-size: 20px;
+            @include respond-to(media-xs) {
+                font-size: 17px;
+            }
+        }
+    }
+}

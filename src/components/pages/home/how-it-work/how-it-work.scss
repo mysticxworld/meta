@@ -1,0 +1,120 @@
+@import "../../../../scss/mixin.scss";
+.howitOuter{
+    background: url(../../../../assets/images/how-it-bg.png) center center no-repeat;
+    padding: 70px 0 90px 0;
+    background-size: cover;
+    @include respond-to(media-lg) {
+        padding: 40px 0 40px 0;
+    }
+    .howitHd {
+        text-align: center;
+        max-width: 840px;
+        margin: 0 auto;
+        h2{
+            font-size: 44px;
+            font-weight: 800;
+            color: #fff;
+            padding-bottom: 15px;
+            @include respond-to(media-sm) {
+                font-size: 36px;
+            }
+            @include respond-to(media-sm) {
+                font-size: 30px;
+            }
+            span{
+                display: block;
+                width: 100px;
+                height: 4px;
+                margin: 5px auto 0 auto;
+                background: #fff;
+            }
+        }
+        p{
+            font-size: 20px;
+            line-height: 30px;
+            color: #fff;
+            margin-bottom: 55px;
+            @include respond-to(media-sm) {
+                font-size: 17px;
+                margin-bottom: 30px;
+            }
+            @include respond-to(media-sm) {
+                font-size: 15px;
+                margin-bottom: 30px;
+                line-height: 25px;
+            }
+        }
+    }
+    .howitList {
+        padding: 0 30px;
+        @include respond-to(media-sm) {
+            padding: 0;
+        }
+        ul {
+            flex-direction: column;
+            li{
+                width: 24%;
+                display: inline-flex;
+                margin-right: 14%;
+                background: #fff;
+                padding: 25px;
+                margin-bottom: 40px;
+                border-radius: 10px;
+                box-shadow: #00000082 1px 5px 17px 0px;
+                @include respond-to(media-xl) {
+                    width: 28%;
+                    margin-right: 8%;
+                }
+                @include respond-to(media-lg) {
+                    width: 32%;
+                    margin-right: 2%;
+                    padding: 15px;
+                }
+                @include respond-to(media-sm) {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+                .howitBx{
+                    text-align: center;
+                    i{
+                        display: block;
+                        padding-bottom: 15px;
+                    }
+                    h3{
+                        display: block;
+                        font-size: 19px;
+                        font-weight: 700;
+                        padding-bottom: 20px;
+                    }
+                    p{
+                        font-size: 14px;
+                        line-height: 21px;
+                    }
+                }
+            }
+        }
+    }
+    .loadmoreBtn {
+        text-align: center;
+        button{
+            width: 143px;
+            height: 43px;
+            border-radius: 5px;
+            border: #fff solid 3px;
+            color: #fff;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.5s ease-in-out;
+            &:hover{
+                color: #000;
+                border: #000 solid 3px;
+            }
+        }
+    }
+}

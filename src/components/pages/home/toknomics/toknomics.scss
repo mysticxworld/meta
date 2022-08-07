@@ -1,0 +1,118 @@
+@import "../../../../scss/mixin.scss";
+.toknomicsOuter{
+    background: url(../../../../assets/images/toknomics-Bg.png) center center no-repeat;
+    padding: 70px 0 90px 0;
+    background-size: cover;
+    @include respond-to(media-sm) {
+        padding: 30px 0;
+    }
+    .toknoHd {
+        text-align: center;
+        max-width: 840px;
+        margin: 0 auto;
+        h2{
+            font-size: 44px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 42px;
+            @include respond-to(media-sm) {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+            @include respond-to(media-xs) {
+                font-size: 30px;
+            }
+            span{
+                display: block;
+                width: 100px;
+                height: 4px;
+                margin: 10px auto 0 auto;
+                background: #8cc641;
+            }
+        }
+    }
+    .toknOutBx {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        max-width: 845px;
+        margin: 0 auto;
+        width: 100%;
+        @include respond-to(media-sm) {
+            display: block;
+        }
+        .toknoLeftBx{
+            background: rgba(29, 191, 115, 0.7);
+            padding: 25px 30px;
+            border-radius: 10px;
+            width: 48%;
+            @include respond-to(media-sm) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            @include respond-to(media-xs) {
+                padding: 20px;
+            }
+            h3 {
+                font-size: 20px;
+                font-weight: 800;
+                color: #fff;
+                padding-bottom: 10px;
+                @include respond-to(media-xs) {
+                    font-size: 18px;
+                }
+            }
+            ul{
+                li{
+                    display: block;
+                    color: #fff;
+                    font-size: 15px;
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                    padding-left: 20px;
+                    position: relative;
+                    i{
+                        width: 10px;
+                        height: 10px;
+                        background: #8cc641;
+                        position: absolute;
+                        left: 0;
+                        top: 6px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .toknoRgtBx{
+            background: rgba(29, 191, 115, 0.7);
+            padding: 25px 30px;
+            border-radius: 10px;
+            width: 48%;
+            @include respond-to(media-sm) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            @include respond-to(media-xs) {
+                padding: 20px;
+            }
+            h3 {
+                font-size: 20px;
+                font-weight: 800;
+                color: #fff;
+                padding-bottom: 10px;
+                @include respond-to(media-xs) {
+                    font-size: 18px;
+                }
+            }
+            ul{
+                li{
+                    display: block;
+                    color: #fff;
+                    font-size: 15px;
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+}

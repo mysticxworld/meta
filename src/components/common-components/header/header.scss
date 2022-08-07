@@ -1,0 +1,193 @@
+@import "../../../scss/mixin.scss";
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+
+    .navOuter{
+        padding-top: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.5s ease-in-out; 
+        @include respond-to(media-lg) {
+            padding-top: 30px;
+        }
+        @include respond-to(media-md) {
+            padding-top: 15px;
+            height: 62px;
+        }
+        @include respond-to(media-sm) {
+            padding-top: 8px;
+        }
+        .container-fluid{
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .logoBx{
+                display: inline-block;
+                @include respond-to(media-md) {
+                    position: fixed;
+                    top: 18px;
+                    left: 15px;
+                }
+                a.navbar-brand {
+                    padding: 0 !important;
+                    line-height: 0;
+                    @include respond-to(media-sm) {
+                        display: inline-block;
+                        max-width: 160px;
+                    }
+                }
+            }
+            .navRight{
+                .navRgtInn{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .menuBx{
+                        a{
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            color: #fff;
+                            padding: 5px 15px;
+                            border-radius: 3px;
+                            line-height: 22px;
+                            margin: 0 10px;
+                            display: inline-block;
+                            @include respond-to(media-lg) {
+                               margin: 0;
+                            }
+                            &:hover{
+                                background: #fff;
+                                color: #000;
+                            }
+                        }
+                        .active{
+                            background: #fff;
+                            color: #000;
+                        }
+                    }
+                    .buytokn{
+                        margin-left: 20px;
+                        @include respond-to(media-md) {
+                            margin-left: 0;
+                        }
+                    }
+                    .menuRight{
+                        margin-left: 20px;
+                        @include respond-to(media-lg) {
+                            margin-left: 10px;
+                            @include respond-to(media-md) {
+                                position: fixed;
+                                right: 78px;
+                                top: 15px;
+                            }
+                        }
+                        a{
+                            font-size: 14px;
+                            text-transform: uppercase;
+                            display: inline-block;
+                            margin-left: 15px;
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 700;
+                            padding: 5px 15px;
+                            border-radius: 3px;
+                            line-height: 22px;
+                            @include respond-to(media-lg) {
+                                margin-left: 10px;
+                            }
+                            @include respond-to(media-sm) {
+                                margin-left: 0px;
+                                padding: 5px 10px;
+                            }
+                            &:hover{
+                                background: #fff;
+                                color: #000;
+                            }
+                        }
+                        .active{
+                            background: #fff;
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menuBx{
+        @include respond-to(media-md) {
+            position: relative;
+        }
+        @include respond-to(media-sm) {
+            position: fixed;
+            right: 0;
+            top: 15px;
+        }
+        button {
+            border: #fff solid 1px;
+            box-shadow: none !important;
+            @include respond-to(media-md) {
+                position: fixed;
+                right: 15px;
+                top: 11px;
+                padding: 4px 10px;
+            }
+            .navbar-toggler-icon{
+                color: #fff !important;
+                background: url(../../../assets/images/bar-img.png) center center no-repeat;
+            }
+        }
+    }
+}
+header.top-bar.fixed {
+    background: #0f1423;
+    .navOuter {
+        padding: 15px 0;
+    }
+}
+.collapse.navbar-collapse {
+    @include respond-to(media-md) {
+        background: #fff;
+        position: fixed;
+        right: 15px;
+        width: 200px;
+        top: 60px;
+        border-radius: 5px;
+        box-shadow: #9b9b9b 0 0 5px 1px;
+    }
+    &:after{
+        border-left:transparent solid 10px;
+        border-right:transparent solid 10px;
+        border-bottom:#fff solid 10px;
+        content: '';
+        position: absolute;
+        right: 15px;
+        top: -10px;
+    }
+
+    li.nav-item{
+        a{
+            @include respond-to(media-md) {
+                display: block;
+                color: #000 !important;
+            }
+            &:hover{
+                color: #1dbf73 !important;
+            }
+        }
+    }
+}
+.navRight{
+    @include respond-to(media-md) {
+        margin-right: 80px;
+    }
+    @include respond-to(media-sm) {
+        margin-right: 65px;
+    }
+}
