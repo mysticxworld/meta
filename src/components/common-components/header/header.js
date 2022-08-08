@@ -1,6 +1,7 @@
 import React from 'react';
 import {Collapse, Navbar, NavbarToggler,NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Logo from '../../../assets/images/logo.png'
+import SacrificPopup from '../../pages/home/banner/sacrific-popup/sacrific-popup'
 import "./header.scss"
 
 export default class Header extends React.Component {
@@ -57,7 +58,7 @@ export default class Header extends React.Component {
                         <NavLink href="#team">Team</NavLink>
                       </NavItem>
                       <NavItem className='buytokn'>
-                        <NavLink href="/">buy token</NavLink>
+                        <SacrificPopup />
                       </NavItem>
                       <NavItem>
                         <NavLink href="#connect" className='active'>connect</NavLink>

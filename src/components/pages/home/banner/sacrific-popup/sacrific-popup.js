@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Thankyou from '../thankyou/thankyou'
+import ethIcon from '../../../../../assets/images/eth-icon.png'
 
 class SpecificPopup extends React.Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class SpecificPopup extends React.Component {
                 </div>
                 <div className='scrifValue'>
                   <input type="text" name='name' className='scrifInp' placeholder='Enter Value' />
+                  <img src={ethIcon} alt="" />
                 </div>
                 <div className='scrifValue'>
                   <input type="text" name='name' className='scrifInp' placeholder='Enter Email Address' />

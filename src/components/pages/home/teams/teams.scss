@@ -34,7 +34,7 @@
             text-align: center;
             li {
                 display: inline-grid;
-                margin: 0 30px;
+                margin: 0 29px;
                 @include respond-to(media-xl) {
                     margin: 0 25px;
                 }
