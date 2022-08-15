@@ -7,20 +7,22 @@ import axios from 'axios';
 import { ethers } from 'ethers';
 import Web3Modal from "web3modal";
 
+import Header from '../../../common-components/header/header';
+
 const Banner = () => {
     const [txx,settxx]=useState([])
     useEffect(() => {
-        gettx()
-      }, [])
-    async function gettx(){
-    const web3Modal = new Web3Modal({
-        network: "rinkeby",
-        theme: "dark",
-        cacheProvider: true
         
-      });
-      var connection = await web3Modal.connect();
-      var provider=new ethers.providers.Web3Provider(connection);
+     
+        gettx()
+        
+      }, [])
+
+  
+  async function gettx(){
+  
+  var provider=new ethers.providers.JsonRpcProvider("https://rpc-mumbai.matic.today/");
+  console.log(provider,"provider")
   var endblock=provider.getBlockNumber()
   var startblock=31441651
   
@@ -33,6 +35,7 @@ const Banner = () => {
       // console.log(sortedInput);
       console.log(res['data'].result,typeof(res));
       settxx(res['data'].result)
+      
     })
     .catch(error => {
       console.error(error);

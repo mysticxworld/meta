@@ -62,10 +62,11 @@ const Header = () => {
         setCconnectWallet("Disconnect");
         //return toast.info("Connected");
       }
-     
+      window.location.reload(true)
     }
       
     else{
+      localStorage.setItem("walletDetails", "");
       setCconnectWallet("Connect");
     }
     }
