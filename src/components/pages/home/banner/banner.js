@@ -1,13 +1,45 @@
-import React, { Component } from 'react'
+import React, {useState, useEffect} from 'react'
 import "./banner.scss";
 import EthIcon from '../../../../assets/images/eth-icon.png'
 import SacrificPopup from './sacrific-popup/sacrific-popup'
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import axios from 'axios';
+import { ethers } from 'ethers';
+import Web3Modal from "web3modal";
 
-export default class Banner extends Component {
+const Banner = () => {
+    const [txx,settxx]=useState([])
+    useEffect(() => {
+        gettx()
+      }, [])
+    async function gettx(){
+    const web3Modal = new Web3Modal({
+        network: "rinkeby",
+        theme: "dark",
+        cacheProvider: true
+        
+      });
+      var connection = await web3Modal.connect();
+      var provider=new ethers.providers.Web3Provider(connection);
+  var endblock=provider.getBlockNumber()
+  var startblock=31441651
+  
+  axios
+    .get('https://api.polygonscan.com/api?module=account&action=txlist&address=0x35ba6e183760c9f0e641c66bfefedff91bf82377&startblock='+startblock+'&endblock='+endblock+'&page=1&offset=10&sort=asc&apikey=IACEU4ET6SWC5S6Y3GT6K4ZMFT44VEX5KK')
+    .then(res => {
+        console.log()
+      console.log(`statusCode: ${res.status}`);
+      // let sortedInput = (res.stringify()).slice(10).sort((a, b) => b.id - a.id);
+      // console.log(sortedInput);
+      console.log(res['data'].result,typeof(res));
+      settxx(res['data'].result)
+    })
+    .catch(error => {
+      console.error(error);
+    });
+    }
     
-
-render() {      
+     
     return (
             <>
                 <div className="BannerOuter">
@@ -25,11 +57,28 @@ render() {
                         <div className="tokensListOuter">
                             <div className="tokensOuter">
                                 <Scrollbars className="tokensScroll">
-                                <ul>
-                                    <li>
+                                {txx.map(tx =>(
+                                <ul> 
+                                    <li >
+                                        
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                                <span>token id</span>
+                                            <a href={"https://polygonscan.com/tx/"+tx.hash} style={{color:'#fff'}}>
+                                                <span>transaction id</span>
+                                                </a>
+                                                <strong>{tx.hash}</strong>
+                                            </div>
+                                            <div className="tokenRight">
+                                                <span><img src={EthIcon} alt="" />eth</span>
+                                                {<span>{Number(ethers.utils.formatEther(tx.value)).toFixed(6)}</span>}
+                                            </div>
+                                        </div>
+                                        
+                                    </li>
+                                    {/* <li>
+                                        <div className="tokensOut">
+                                            <div className="tokenLeft">
+                                                <span>transaction id</span>
                                                 <strong>0x97Efb6f82fE14d7a0b7Aeb0a7a0b7Aeb0a</strong>
                                             </div>
                                             <div className="tokenRight">
@@ -41,7 +90,7 @@ render() {
                                     <li>
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                                <span>token id</span>
+                                                <span>transaction id</span>
                                                 <strong>0x97Efb6f82fE14d7a0b7Aeb0a7a0b7Aeb0a</strong>
                                             </div>
                                             <div className="tokenRight">
@@ -53,7 +102,7 @@ render() {
                                     <li>
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                                <span>token id</span>
+                                                <span>transaction id</span>
                                                 <strong>0x97Efb6f82fE14d7a0b7Aeb0a7a0b7Aeb0a</strong>
                                             </div>
                                             <div className="tokenRight">
@@ -65,7 +114,7 @@ render() {
                                     <li>
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                                <span>token id</span>
+                                                <span>transaction id</span>
                                                 <strong>0x97Efb6f82fE14d7a0b7Aeb0a7a0b7Aeb0a</strong>
                                             </div>
                                             <div className="tokenRight">
@@ -77,7 +126,7 @@ render() {
                                     <li>
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                                <span>token id</span>
+                                                <span>transaction id</span>
                                                 <strong>0x97Efb6f82fE14d7a0b7Aeb0a7a0b7Aeb0a</strong>
                                             </div>
                                             <div className="tokenRight">
@@ -89,7 +138,7 @@ render() {
                                     <li>
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                                <span>token id</span>
+                                                <span>transaction id</span>
                                                 <strong>0x97Efb6f82fE14d7a0b7Aeb0a7a0b7Aeb0a</strong>
                                             </div>
                                             <div className="tokenRight">
@@ -97,20 +146,9 @@ render() {
                                                 <span>1.058.00</span>
                                             </div>
                                         </div>
-                                    </li>
-                                    <li>
-                                        <div className="tokensOut">
-                                            <div className="tokenLeft">
-                                                <span>token id</span>
-                                                <strong>0x97Efb6f82fE14d7a0b7Aeb0a7a0b7Aeb0a</strong>
-                                            </div>
-                                            <div className="tokenRight">
-                                                <span><img src={EthIcon} alt="" />eth</span>
-                                                <span>1.058.00</span>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    </li> */}
                                 </ul>
+                                ) )}
                                 </Scrollbars>
                                 <div className="bggradient">&nbsp;</div>
                             </div>
@@ -122,6 +160,7 @@ render() {
                 </div>
             </>
     )
-}
+
 
 }
+export default Banner;

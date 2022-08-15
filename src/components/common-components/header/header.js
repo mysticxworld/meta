@@ -1,36 +1,82 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Collapse, Navbar, NavbarToggler,NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Logo from '../../../assets/images/logo.png'
 import SacrificPopup from '../../pages/home/banner/sacrific-popup/sacrific-popup'
 import "./header.scss"
+import { ethers } from 'ethers';
+import Web3Modal from "web3modal";
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-  componentDidMount(){
-    window.addEventListener('scroll', () => {
-       let activeClass = 'fixed';
+
+const Header = () => {
+  const [toggle,settoggle]=useState(false);
+  const[activeClass,setactiveClass]=useState("");
+ function togglee(){
+  settoggle(true);
+ }
+  window.addEventListener('scroll', () => {
+       setactiveClass('fixed');
        if(window.scrollY === 0){
-           activeClass = 'normal';
+           setactiveClass('normal');
        }
-       this.setState({ activeClass });
+       
     });
-}
-  render() {
+    
+  const [CconnectWallet, setCconnectWallet] = useState("Connect")
+  const [connected, setconnected] = useState()
+  const [walletAddress, setWalletAddress] = useState("")
+  useEffect(() => {
+    const localStorageData = localStorage.getItem("walletDetails");
+    console.log("Users wallet is connected", localStorageData);
+    if (localStorageData) {
+      setCconnectWallet("Disconnect Wallet");
+    }
+  }, []);
+  
+  
+  async function connectwallet() {
+    const web3Modal = new Web3Modal({
+      network: "rinkeby",
+      theme: "dark",
+      cacheProvider: true
+      
+    });
+    if (CconnectWallet == "Connect") {
+      const permissions = await window.ethereum.request({
+        method: 'wallet_requestPermissions',
+        params: [{
+          eth_accounts: {},
+        }]
+      });
+
+      web3Modal.clearCachedProvider()
+      var connection = await web3Modal.connect();
+      var provider=new ethers.providers.Web3Provider(connection);
+      const userAddress = await provider.getSigner().getAddress()
+       var account =userAddress;
+       localStorage.setItem("walletDetails", account);
+      setWalletAddress(account);
+      console.log(account);
+      if (account) {
+        setconnected(true);
+        setCconnectWallet("Disconnect");
+        //return toast.info("Connected");
+      }
+     
+    }
+      
+    else{
+      setCconnectWallet("Connect");
+    }
+    }
+
+  
+
+
+  
     return (
       <div>
-        <header className={`top-bar ${this.state.activeClass}`}>
+        <header className={`top-bar ${activeClass}`}>
           <div className='container'>
             <Navbar className='navOuter' light expand="lg">
               <div className='logoBx'>
@@ -39,8 +85,8 @@ export default class Header extends React.Component {
               <div className='navRight'>
                 <div className='navRgtInn'>
                   <div className='menuBx'>
-                  <NavbarToggler onClick={this.toggle} />
-                  <Collapse isOpen={this.state.isOpen} navbar>
+                  <NavbarToggler onClick={togglee} />
+                  <Collapse isOpen={toggle} navbar>
                     <Nav className="ml-auto" navbar>
                       <NavItem>
                         <NavLink href="#mission">About Us</NavLink>
@@ -61,7 +107,7 @@ export default class Header extends React.Component {
                         <SacrificPopup />
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#connect" className='active'>connect</NavLink>
+                        <NavLink  className='active' onClick={connectwallet}>{CconnectWallet}</NavLink>
                       </NavItem>
                     </Nav>
                   </Collapse>
@@ -74,5 +120,5 @@ export default class Header extends React.Component {
         </header>
       </div>
     );
-  }
 }
+export default Header;
