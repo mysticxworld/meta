@@ -20,27 +20,44 @@ const Banner = () => {
 
   
   async function gettx(){
-  
-  var provider=new ethers.providers.JsonRpcProvider("https://rpc-mumbai.matic.today/");
+    const web3Modal = new Web3Modal({
+        network: "rinkeyby",
+        theme: "dark",
+        cacheProvider: true
+        
+      });
+//   var provider=new ethers.providers.JsonRpcProvider("https://rinkeby.infura.io/v3/");
+var connection = await web3Modal.connect();
+var provider=new ethers.providers.Web3Provider(connection);
   console.log(provider,"provider")
-  var endblock=provider.getBlockNumber()
-  var startblock=31441651
   
+  var time =Math.floor(Date.now() / 1000)
+  console.log(time)
+  var startblock=0;
+  
+    axios.get('https://api-rinkeby.etherscan.io/api?module=block&action=getblocknobytime&timestamp='+time+'&closest=before&apikey=YN5AQTMPMBFFXF4SA2QHJI7HBWTT3QP5KN')
+    .then(end => {
+      
+  var endblock=end['data'].result;
+  console.log(end)
+
   axios
-    .get('https://api.polygonscan.com/api?module=account&action=txlist&address=0x35ba6e183760c9f0e641c66bfefedff91bf82377&startblock='+startblock+'&endblock='+endblock+'&page=1&offset=10&sort=asc&apikey=IACEU4ET6SWC5S6Y3GT6K4ZMFT44VEX5KK')
+    .get('https://api-rinkeby.etherscan.io/api?module=account&action=txlist&address=0x15be4040E5147Cd9F8Cc4600C9D6Da720F2631Ea&startblock='+startblock+'&endblock='+endblock+'&page=1&offset=100&sort=desc&apikey=YN5AQTMPMBFFXF4SA2QHJI7HBWTT3QP5KN')
     .then(res => {
-        console.log()
+        console.log('https://api-rinkeby.etherscan.io/api?module=account&action=txlist&address=0x15be4040E5147Cd9F8Cc4600C9D6Da720F2631Ea&startblock='+startblock+'&endblock='+endblock+'&page=1&offset=100&sort=desc&apikey=YN5AQTMPMBFFXF4SA2QHJI7HBWTT3QP5KN')
       console.log(`statusCode: ${res.status}`);
-      // let sortedInput = (res.stringify()).slice(10).sort((a, b) => b.id - a.id);
-      // console.log(sortedInput);
-      console.log(res['data'].result,typeof(res));
-      settxx(res['data'].result)
+
+      let sortedInput = (res["data"].result).slice().sort((a, b) =>Number(b.blockNumber) - Number(a.blockNumber));
+      console.log(sortedInput);
+      
+      settxx(sortedInput)
       
     })
     .catch(error => {
       console.error(error);
     });
     }
+  )}
     
      
     return (
@@ -66,7 +83,7 @@ const Banner = () => {
                                         
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                            <a href={"https://polygonscan.com/tx/"+tx.hash} style={{color:'#fff'}}>
+                                            <a href={"https://rinkeby.etherscan.io/tx/"+tx.hash} target="_blank" style={{color:'#fff'}}>
                                                 <span>transaction id</span>
                                                 </a>
                                                 <strong>{tx.hash}</strong>

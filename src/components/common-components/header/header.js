@@ -37,46 +37,66 @@ const Header = () => {
   async function checkchain(){
 
     if(!connected){
-      connectwallet()
-    }
+      
+      const chainId = 4 // Rinkeby Mainnet
+      console.log(window.ethereum.networkVersion)
+    if (window.ethereum.networkVersion !== chainId) {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId:"0x4" }]
+            });
+          } catch (err) {
+            console.log(err)
+            if (err.code === 4902) {
+              await window.ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [
+                  {
+                    chainName: ' rinkeby Mainnet',
+                    chainId: "0x4",
+                    nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
+                    rpcUrls: ['https://rinkeby.infura.io/v3']
+                  }
+                ]
+              });
+            }
+          }
+        }
   }
+}
   
   async function connectwallet() {
 
-
-
-    try {
-      await window.ethereum.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x13881" }],
-      });
-    } catch (e) {
-      if (e.code === 4902) {
-        try {
+  const chainId = 4 // Rinkeby Mainnet
+  console.log(window.ethereum.networkVersion)
+if (window.ethereum.networkVersion !== chainId) {
+      try {
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId:"0x4" }]
+        });
+      } catch (err) {
+        console.log(err)
+        if (err.code === 4902) {
           await window.ethereum.request({
-            method: "wallet_addEthereumChain",
+            method: 'wallet_addEthereumChain',
             params: [
               {
-                chainId: "0x13881",
-                chainName: "Polygon Testnet",
-                nativeCurrency: {
-                  name: "Matic",
-                  symbol: "MATIC", // 2-6 characters long
-                  decimals: 18,
-                },
-                blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
-                rpcUrls: ["https://rpc-mumbai.matic.today/"],
-              },
-            ],
+                chainName: ' rinkeby Mainnet',
+                chainId: "0x4",
+                nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
+                rpcUrls: ['https://rinkeby.infura.io/v3']
+              }
+            ]
           });
-        } catch (addError) {
-          console.error(addError);
         }
       }
-      // console.error(e)
     }
+      // console.error(e)
+    
     const web3Modal = new Web3Modal({
-      network: "mumbai",
+      network: "rinkeyby",
       theme: "dark",
       cacheProvider: true
       

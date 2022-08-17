@@ -16,6 +16,9 @@ const SpecificPopup = () => {
   const [value,setvalue]= useState(0); 
   function toggle() {
     setmodal(!modal);
+    if (!modal==false){
+      window.location.reload()
+    }
 
   };
   function yeah() {
@@ -59,7 +62,8 @@ const SpecificPopup = () => {
         <Button color="danger" onClick={() => toggle()}>Sacrifice</Button>
         <Modal isOpen={modal} toggle={() => toggle()} className="modalOuter">
           <ModalFooter>
-            <Button className='popcloseBtn' onClick={() => toggle()}>X</Button>
+            <Button className='popcloseBtn' onClick={() =>toggle()} >X</Button>
+          
           </ModalFooter>
           <ModalBody>
               <div className='sacrificBx'>
