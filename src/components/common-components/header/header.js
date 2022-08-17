@@ -29,14 +29,47 @@ const Header = () => {
     const localStorageData = localStorage.getItem("walletDetails");
     console.log("Users wallet is connected", localStorageData);
     if (localStorageData) {
-      setCconnectWallet("Disconnect Wallet");
+      setCconnectWallet("Disconnect");
     }
   }, []);
   
   
   async function connectwallet() {
+
+
+
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x13881" }],
+      });
+    } catch (e) {
+      if (e.code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x13881",
+                chainName: "Polygon Testnet",
+                nativeCurrency: {
+                  name: "Matic",
+                  symbol: "MATIC", // 2-6 characters long
+                  decimals: 18,
+                },
+                blockExplorerUrls: ["https://mumbai.polygonscan.com/"],
+                rpcUrls: ["https://rpc-mumbai.matic.today/"],
+              },
+            ],
+          });
+        } catch (addError) {
+          console.error(addError);
+        }
+      }
+      // console.error(e)
+    }
     const web3Modal = new Web3Modal({
-      network: "rinkeby",
+      network: "mumbai",
       theme: "dark",
       cacheProvider: true
       
@@ -62,7 +95,7 @@ const Header = () => {
         setCconnectWallet("Disconnect");
         //return toast.info("Connected");
       }
-      window.location.reload(true)
+      
     }
       
     else{

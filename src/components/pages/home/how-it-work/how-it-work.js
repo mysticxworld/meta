@@ -62,7 +62,7 @@ export default class HowitWork extends Component {
                             </ul>
                         </div>
                         <div className="loadmoreBtn">
-                            <button>Read More</button>
+                            {/* <button>Read More</button> */}
                         </div>
                     </div>
                 </div>

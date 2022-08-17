@@ -1,6 +1,6 @@
 import React,{useState}from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Thankyou from '../thankyou/thankyou'
+// import Thankyou from '../thankyou/thankyou'
 import ethIcon from '../../../../../assets/images/eth-icon.png'
 import { ethers } from 'ethers';
 import Web3Modal from "web3modal";
@@ -8,12 +8,18 @@ import Web3Modal from "web3modal";
 
 const SpecificPopup = () => {
  
+  const[Sacrifice,setSacrifice]=useState("Sacrifice")
   const [modal,setmodal]= useState(false); 
+  const [thanks,setthanks]=useState(false);
   const [tcc,settcc]= useState(""); 
   
   const [value,setvalue]= useState(0); 
   function toggle() {
     setmodal(!modal);
+
+  };
+  function yeah() {
+    setthanks(!thanks);
 
   };
   const handleChange = event => {
@@ -40,8 +46,11 @@ const SpecificPopup = () => {
       value: ethers.utils.parseEther(amount.toString())
     
   });
+  setSacrifice("Please Wait")
   const txw = await tx.wait();
-  settcc(Thankyou);
+  setSacrifice("Sacrifice")
+  yeah();
+  
   }
  
     return (
@@ -71,17 +80,31 @@ const SpecificPopup = () => {
                 {/* <div className='scrifValue'>
                   <input type="text" name='name' className='scrifInp' placeholder='Enter Email Address' />
                 </div> */}
-                <div className='srcfBtnBx' onClick={() => send(value)}>
-                <Thankyou/>
+                <div className='srcfBtnBx' >
+                <Button color="danger" onClick={() => send(value)}>{Sacrifice}</Button>
+               
                 
                 </div>
                 <p>
 
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                Wait for Transaction to get confirmed after hitting Sacrifice.</p>
                  
               </div>
           </ModalBody>
+
           
+        </Modal>
+        <Modal isOpen={thanks} toggle={() => yeah()} className="modalOuter">
+          <ModalFooter>
+            <Button className='popcloseBtn' onClick={() => yeah()}>X</Button>
+          </ModalFooter>
+          <ModalBody>
+              <div className='thankyouMsg'>
+                <h2>Thank you !</h2>
+                <p>Thank you for your Sacrifice, we will connect you soon </p>
+              </div>
+          </ModalBody>
+
         </Modal>
       </div>
     );
