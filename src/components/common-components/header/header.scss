@@ -71,6 +71,7 @@ header {
                             }
                         }
                         .active{
+                            cursor: pointer;
                             background: #fff;
                             color: #000;
                         }
@@ -102,6 +103,7 @@ header {
                                 color: #1dbf73;
                             }
                         }
+                       
                     }
                     .menuRight{
                         margin-left: 20px;
@@ -216,4 +218,5 @@ header.top-bar.fixed {
     @include respond-to(media-sm) {
         margin-right: 65px;
     }
+    
 }

@@ -31,6 +31,7 @@ const SpecificPopup = () => {
 
 
   async function send(amount){
+    
     const web3Modal = new Web3Modal({
       network: "rinkeby",
       theme: "dark",

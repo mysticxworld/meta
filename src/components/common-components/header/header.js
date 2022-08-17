@@ -33,6 +33,13 @@ const Header = () => {
     }
   }, []);
   
+
+  async function checkchain(){
+
+    if(!connected){
+      connectwallet()
+    }
+  }
   
   async function connectwallet() {
 
@@ -137,7 +144,7 @@ const Header = () => {
                       <NavItem>
                         <NavLink href="#team">Team</NavLink>
                       </NavItem>
-                      <NavItem className='buytokn'>
+                      <NavItem className='buytokn' onClick={checkchain}>
                         <SacrificPopup />
                       </NavItem>
                       <NavItem>
