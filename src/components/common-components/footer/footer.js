@@ -12,19 +12,19 @@ const Footer = (props) => {
                 <footer id="connect">
                     <div className="container">
                         <div className="footerInn">
-                            <div className="footLogo wow slideInLeft" data-wow-duration="2s" data-wow-delay=".3s">
+                            <div className="footLogo">
                                 <img src={Logo} alt="" />
                             </div>
-                            <div className="footPet wow slideInDown" data-wow-duration="2s" data-wow-delay=".3s">
+                            <div className="footPet">
                                 <span>Patents Pending</span>
                                 <span>&copy; metame.EARTH</span>
                             </div>
-                            <div className="footsocial wow slideInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                            <div className="footsocial">
                                 <span>Read Us</span>
                                 <a href=""><img src={FbIcon} alt="" /></a>
                                 <a href=""><img src={TweetIcon} alt="" /></a>
                             </div>
-                            <div className="footpolicy wow slideInRight" data-wow-duration="2s" data-wow-delay=".3s">
+                            <div className="footpolicy">
                                 <p>Contact us with any questions regarding 
                                     Rentberry: <a href="">ico@metame.earth.com</a>
                                 </p>

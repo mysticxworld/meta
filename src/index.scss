@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import "./scss/mixin.scss";
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   color: #0b1121;
+  overflow-x: hidden;
 }
 *{
   box-sizing: border-box;
@@ -25,8 +27,18 @@ a{
   padding-bottom: 0 !important;
 }
 .container{
-  max-width: 1170px !important;
+  max-width: 1730px !important;
   width: 100% !important;
   padding: 0 15px;
   margin: 0 auto;
+}
+.wow {
+  @include respond-to(media-sm) {
+    visibility: visible !important;
+    -webkit-animation: none !important;
+      -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+            animation: none !important;
+  }
 }
