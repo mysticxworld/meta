@@ -12,7 +12,7 @@ const Header = () => {
   const [toggle,settoggle]=useState(false);
   const[activeClass,setactiveClass]=useState("");
  function togglee(){
-  settoggle(true);
+  settoggle(!toggle);
  }
   window.addEventListener('scroll', () => {
        setactiveClass('fixed');
@@ -64,6 +64,7 @@ const Header = () => {
           }
         }
   }
+  
 }
   
   async function connectwallet() {

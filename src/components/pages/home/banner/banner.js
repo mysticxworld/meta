@@ -20,44 +20,38 @@ const Banner = () => {
 
   
   async function gettx(){
-    const web3Modal = new Web3Modal({
-        network: "rinkeyby",
-        theme: "dark",
-        cacheProvider: true
+//     const web3Modal = new Web3Modal({
+//         network: "rinkeyby",
+//         theme: "dark",
+//         cacheProvider: true
         
-      });
-//   var provider=new ethers.providers.JsonRpcProvider("https://rinkeby.infura.io/v3/");
-var connection = await web3Modal.connect();
-var provider=new ethers.providers.Web3Provider(connection);
-  console.log(provider,"provider")
+//       });
+// //   var provider=new ethers.providers.JsonRpcProvider("https://rinkeby.infura.io/v3/");
+// var connection = await web3Modal.connect();
+// var provider=new ethers.providers.Web3Provider(connection);
+//   console.log(provider,"provider")
   
-  var time =Math.floor(Date.now() / 1000)
-  console.log(time)
-  var startblock=0;
   
-    axios.get('https://api-rinkeby.etherscan.io/api?module=block&action=getblocknobytime&timestamp='+time+'&closest=before&apikey=YN5AQTMPMBFFXF4SA2QHJI7HBWTT3QP5KN')
-    .then(end => {
-      
-  var endblock=end['data'].result;
-  console.log(end)
-
-  axios
-    .get('https://api-rinkeby.etherscan.io/api?module=account&action=txlist&address=0x15be4040E5147Cd9F8Cc4600C9D6Da720F2631Ea&startblock='+startblock+'&endblock='+endblock+'&page=1&offset=100&sort=desc&apikey=YN5AQTMPMBFFXF4SA2QHJI7HBWTT3QP5KN')
+    
+  const article={
+    'table':"transactions"
+}
+axios.get('https://9uyf4erjbf.execute-api.us-east-2.amazonaws.com/tts')
     .then(res => {
-        console.log('https://api-rinkeby.etherscan.io/api?module=account&action=txlist&address=0x15be4040E5147Cd9F8Cc4600C9D6Da720F2631Ea&startblock='+startblock+'&endblock='+endblock+'&page=1&offset=100&sort=desc&apikey=YN5AQTMPMBFFXF4SA2QHJI7HBWTT3QP5KN')
-      console.log(`statusCode: ${res.status}`);
-
-      let sortedInput = (res["data"].result).slice().sort((a, b) =>Number(b.blockNumber) - Number(a.blockNumber));
+        
+      console.log(res);
+     console.log(res["data"]);
+      let sortedInput = (res["data"]).slice().sort((a, b) =>Number(b.time) - Number(a.time));
       console.log(sortedInput);
       
       settxx(sortedInput)
       
     })
-    .catch(error => {
-      console.error(error);
-    });
+    // .catch(error => {
+    //   console.error(error);
+    // });
     }
-  )}
+  
     
      
     return (
@@ -83,14 +77,24 @@ var provider=new ethers.providers.Web3Provider(connection);
                                         
                                         <div className="tokensOut">
                                             <div className="tokenLeft">
-                                            <a href={"https://rinkeby.etherscan.io/tx/"+tx.hash} target="_blank" style={{color:'#fff'}}>
+                                            {tx.type}
+                                            {tx.type == "ethereum"?
+                                            <a href={"https://rinkeby.etherscan.io/tx/"+tx.id} target="_blank" style={{color:'#fff'}}>
                                                 <span>transaction id</span>
                                                 </a>
-                                                <strong>{tx.hash}</strong>
+                                            :
+                                            <span>transaction id</span>
+                                }
+
+                                                <strong>{tx.id}</strong>
                                             </div>
                                             <div className="tokenRight">
+                                            {tx.type == "ethereum"?
                                                 <span><img src={EthIcon} alt="" />eth</span>
-                                                {<span>{Number(ethers.utils.formatEther(tx.value)).toFixed(6)}</span>}
+                                                :
+                                                <span>USD</span>
+                            }
+                                                {<span>{Number(tx.value).toFixed(4)}</span>}
                                             </div>
                                         </div>
                                         

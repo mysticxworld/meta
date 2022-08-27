@@ -26,7 +26,7 @@ const Footer = (props) => {
                             </div>
                             <div className="footpolicy">
                                 <p>Contact us with any questions regarding 
-                                    Rentberry: <a href="">ico@metame.earth.com</a>
+                                    METAME-EARTH: <a href="">ico@metame.earth.com</a>
                                 </p>
                                 <span>
                                     <a href="">Privacy Policy</a><br/>

@@ -38,6 +38,9 @@
                 @include respond-to(media-xl) {
                     margin: 0 25px;
                 }
+                @include respond-to(media-lg) {
+                    margin: 0 17px;
+                }
                 @include respond-to(media-md) {
                     margin: 0 10px;
                 }

@@ -5,6 +5,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include respond-to(media-xxl) {
+            padding: 0 30px;
+        }
+        @include respond-to(media-lg) {
+            padding: 0 10px;
+        }
+        @include respond-to(media-md) {
+            padding: 0 0px;
+        }
         @include respond-to(media-sm) {
             display: block;
         }

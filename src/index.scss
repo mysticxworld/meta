@@ -5,6 +5,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #0b1121;
   overflow-x: hidden;
+  overflow-y: inherit !important;
 }
 *{
   box-sizing: border-box;
@@ -41,4 +42,7 @@ a{
         -ms-animation: none !important;
             animation: none !important;
   }
+}
+.web3modal-modal-lightbox{
+  display: none !important;
 }
