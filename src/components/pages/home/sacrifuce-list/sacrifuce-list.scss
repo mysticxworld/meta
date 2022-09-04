@@ -1,0 +1,118 @@
+@import "../../../../scss/mixin.scss";
+.secrifice_Outer{
+    padding: 50px 0;
+    background: #02407D;
+    @include respond-to(media-sm) {
+        padding: 30px 0;
+    }
+    .secrificeInn {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        @include respond-to(media-sm) {
+            display: block;
+        }
+    }
+    .secrifiList {
+        width: 48%;
+        @include respond-to(media-sm) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        h2{
+            font-weight: 700;
+            padding-bottom: 20px;
+            color: #fff;
+            @include respond-to(media-sm) {
+                padding-bottom: 5px;
+            }
+        }
+        .tokensScroll{
+            height: 430px !important;
+            width: 100% !important;
+            > div + div + div{
+                background: #0372e2;
+                width: 10px !important;
+                border-radius: 0 !important;
+                right: 0px !important;
+                > div{
+                    background: #fff !important;
+                }
+            }
+        }
+        ul {
+            padding-right: 20px !important;
+            @include respond-to(media-sm) {
+                padding-right: 0px !important;
+            }
+            li {
+                display: block;
+                margin-bottom: 20px;
+                .tokensOut {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: stretch;
+                    background: #fff;
+                    border-radius: 5px;
+                    padding: 10px;
+                    &:hover{
+                        background: #17191C;
+                        .tokenLeft {
+                            width: 60%;
+                            color: #fff;
+                            span{
+                                color: #0372e2;
+                            }
+                        }
+                        .tokenRight {
+                            color: #fff;
+                        }
+                    }
+                    .tokenLeft {
+                        width: 60%;
+                        span{
+                            display: block;
+                            font-size: 16px;
+                            color: #0372e2;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            text-decoration: none !important;
+                            @include respond-to(media-xs) {
+                                font-size: 14px;
+                            }
+                        }
+                        strong{
+                            display: block;
+                            text-transform: uppercase;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            @include respond-to(media-xs) {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .tokenRight {
+                        width: 40%;
+                        text-align: right;
+                        text-transform: uppercase;
+                        span{
+                            display: block;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 21px;
+                            padding-bottom: 3px;
+                            @include respond-to(media-xs) {
+                                font-size: 14px;
+                            }
+                            img{
+                                display: inline-block;
+                                margin-right: 5px;
+                                vertical-align: top;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

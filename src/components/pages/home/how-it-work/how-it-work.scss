@@ -66,7 +66,7 @@
                 padding: 25px;
                 margin-bottom: 40px;
                 border-radius: 10px;
-                box-shadow: #00000082 1px 5px 17px 0px;
+                box-shadow: #17191C82 1px 5px 17px 0px;
                 @include respond-to(media-xl) {
                     width: 28%;
                     margin-right: 8%;
@@ -118,8 +118,8 @@
             text-transform: uppercase;
             transition: all 0.5s ease-in-out;
             &:hover{
-                color: #000;
-                border: #000 solid 3px;
+                color: #131920;
+                border: #17191C solid 3px;
             }
         }
     }

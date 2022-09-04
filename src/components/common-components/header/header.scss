@@ -7,7 +7,7 @@ header {
     z-index: 999;
 
     .navOuter{
-        padding-top: 55px;
+        padding-top: 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -37,6 +37,8 @@ header {
                 a.navbar-brand {
                     padding: 0 !important;
                     line-height: 0;
+                    width: 125px;
+                    display: inline-block;
                     @include respond-to(media-sm) {
                         display: inline-block;
                         max-width: 160px;
@@ -67,13 +69,13 @@ header {
                              }
                             &:hover{
                                 background: #fff;
-                                color: #000;
+                                color: #17191C;
                             }
                         }
                         .active{
                             cursor: pointer;
                             background: #fff;
-                            color: #000;
+                            color: #17191C;
                         }
                     }
                     .buytokn{
@@ -96,11 +98,11 @@ header {
                                 position: relative;
                                 top: 0;
                                 right: auto;
-                                color: #000;
+                                color: #17191C;
                             }
                             &:hover{
                                 background: #fff;
-                                color: #1dbf73;
+                                color: #0372e2;
                             }
                         }
                        
@@ -135,12 +137,12 @@ header {
                             }
                             &:hover{
                                 background: #fff;
-                                color: #000;
+                                color: #17191C;
                             }
                         }
                         .active{
                             background: #fff;
-                            color: #000;
+                            color: #17191C;
                         }
                     }
                 }
@@ -173,7 +175,7 @@ header {
     }
 }
 header.top-bar.fixed {
-    background: #0f1423;
+    background: #022d58;
     .navOuter {
         padding: 15px 0;
     }
@@ -203,10 +205,10 @@ header.top-bar.fixed {
         a{
             @include respond-to(media-md) {
                 display: block;
-                color: #000 !important;
+                color: #131920 !important;
             }
             &:hover{
-                color: #1dbf73 !important;
+                color: #0372e2 !important;
             }
         }
     }

@@ -41,7 +41,7 @@
             &:before{
                 width: 105px;
                 height: 4px;
-                background: #1dbf73;
+                background: #0372e2;
                 position: absolute;
                 left: 50%;
                 top: 0;
@@ -61,7 +61,7 @@
             &:after{
                 width: 105px;
                 height: 4px;
-                background: #1dbf73;
+                background: #0372e2;
                 position: absolute;
                 left: 50%;
                 bottom: 0;
@@ -81,7 +81,7 @@
             i.yearTag {
                 width: 72px;
                 height: 72px;
-                background: #1dbf73;
+                background: #0372e2;
                 display: inline-block;
                 text-align: center;
                 line-height: 72px;
@@ -133,7 +133,7 @@
                         display: inline-block;
                     }
                     .rodmapBx {
-                        background: #1dbf73;
+                        background: #0372e2;
                         padding: 20px;
                         border-radius: 10px;
                         text-align: left;
@@ -169,7 +169,7 @@
     width: 345px;
     
     &:after{
-        background: #1dbf73;
+        background: #0372e2;
         content: '';
         position: absolute;
         right: -65px;
@@ -190,7 +190,7 @@
         height: 20px;
         top: 63px;
         border-radius: 50%;
-        border: #1dbf73 solid 4px;
+        border: #0372e2 solid 4px;
         z-index: 9;
         @include respond-to(media-sm) {
             right: auto;
@@ -213,7 +213,7 @@
         margin-left: 55px;
     }
     &:after{
-        background: #1dbf73;
+        background: #0372e2;
         content: '';
         position: absolute;
         left: -102px;
@@ -234,7 +234,7 @@
         height: 20px;
         top: 63px;
         border-radius: 50%;
-        border: #1dbf73 solid 4px;
+        border: #0372e2 solid 4px;
         z-index: 9;
         @include respond-to(media-sm) {
             left: -39px;

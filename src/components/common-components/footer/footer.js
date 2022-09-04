@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from '../../../assets/images/logo.png'
+import Logo from '../../../assets/images/logo-white.png'
 import FbIcon from '../../../assets/images/fb-icon.png'
 import TweetIcon from '../../../assets/images/tweet-icon.png'
 import "./footer.scss";

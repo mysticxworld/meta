@@ -1,0 +1,87 @@
+@import "../../../../scss/mixin.scss";
+.marqueeOuter{
+    padding: 30px 0;
+    background: #f9f9f9;
+    @include respond-to(media-sm) {
+        padding: 20px 0;
+    }
+    
+    
+
+    .marqueeListinn{
+        ul{
+            li{
+                display: inline-block;
+                padding: 15px;
+                @include respond-to(media-xs) {
+                    max-width: 300px;
+                }
+                .tokensOut {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: stretch;
+                    box-shadow: #e5e5e5 0 0 10px 1px;
+                    background: #fff;
+                    border-radius: 5px;
+                    padding: 10px;
+                    &:hover{
+                        background: #17191C;
+                        .tokenLeft {
+                            width: 60%;
+                            color: #fff;
+                            span{
+                                color: #0372e2;
+                            }
+                        }
+                        .tokenRight {
+                            color: #fff;
+                        }
+                    }
+                    .tokenLeft {
+                        width: 60%;
+                        span{
+                            display: block;
+                            font-size: 16px;
+                            color: #0372e2;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            text-decoration: none !important;
+                            @include respond-to(media-xs) {
+                                font-size: 14px;
+                            }
+                        }
+                        strong{
+                            display: block;
+                            text-transform: uppercase;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            @include respond-to(media-xs) {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .tokenRight {
+                        width: 40%;
+                        text-align: right;
+                        text-transform: uppercase;
+                        span{
+                            display: block;
+                            font-size: 16px;
+                            font-weight: 700;
+                            line-height: 21px;
+                            padding-bottom: 3px;
+                            @include respond-to(media-xs) {
+                                font-size: 14px;
+                            }
+                            img{
+                                display: inline-block;
+                                margin-right: 5px;
+                                vertical-align: top;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

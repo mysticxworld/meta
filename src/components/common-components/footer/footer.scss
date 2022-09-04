@@ -1,9 +1,12 @@
 @import "../../../scss/mixin.scss";
 footer {
-    background: #0f1423;
+    background: #022d58;
     padding: 50px 0 30px 0;
     @include respond-to(media-sm) {
         padding: 30px 0 10px 0;
+    }
+    .footLogo {
+        width: 150px;
     }
     .footerInn {
         display: flex;
@@ -75,7 +78,7 @@ footer {
                     color: #fff;
                     text-decoration: none;
                     &:hover{
-                        color: #1dbf73;
+                        color: #0372e2;
                         text-decoration: underline;
                     }
                 }
@@ -85,7 +88,7 @@ footer {
                     color: #fff;
                     text-decoration: underline;
                     &:hover{
-                        color: #1dbf73;
+                        color: #0372e2;
                     }
                 }
             }

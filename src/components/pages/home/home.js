@@ -3,6 +3,8 @@ import WOW from 'wowjs';
 import "../home/home.scss"
 import Header from '../../common-components/header/header'
 import Banner from '../home/banner/banner'
+import Marquee from '../home/marquee/marquee'
+import SecrificeList from '../home/sacrifuce-list/sacrifuce-list'
 import Mission from '../home/mission/mission'
 import Roadmap from '../home/roadmap/roadmap'
 import HowItWork from '../home/how-it-work/how-it-work'
@@ -21,6 +23,8 @@ export default class Home extends Component {
             <div>
                 <Header />
                 <Banner />
+                <Marquee />
+                <SecrificeList />
                 <Mission />
                 <Roadmap />
                 <HowItWork />

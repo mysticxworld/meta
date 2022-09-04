@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Collapse, Navbar, NavbarToggler,NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import Logo from '../../../assets/images/logo.png'
+import Logo from '../../../assets/images/logo-white.png'
 import SacrificPopup from '../../pages/home/banner/sacrific-popup/sacrific-popup'
 import "./header.scss"
 import { ethers } from 'ethers';
@@ -22,7 +22,7 @@ const Header = () => {
        
     });
     
-  const [CconnectWallet, setCconnectWallet] = useState("Connect")
+  const [CconnectWallet, setCconnectWallet] = useState("Leaderboard")
   const [connected, setconnected] = useState()
   const [walletAddress, setWalletAddress] = useState("")
   useEffect(() => {
@@ -128,7 +128,7 @@ if (window.ethereum.networkVersion !== chainId) {
       
     else{
       localStorage.setItem("walletDetails", "");
-      setCconnectWallet("Connect");
+      setCconnectWallet("Leaderboard");
     }
     }
 
@@ -169,7 +169,7 @@ if (window.ethereum.networkVersion !== chainId) {
                         <SacrificPopup />
                       </NavItem>
                       <NavItem>
-                        <NavLink  className='active' onClick={connectwallet}>{CconnectWallet}</NavLink>
+                        <NavLink href="#scrfList" className='active' >{CconnectWallet}</NavLink>
                       </NavItem>
                     </Nav>
                   </Collapse>
