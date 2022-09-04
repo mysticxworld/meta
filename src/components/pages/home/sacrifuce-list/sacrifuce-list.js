@@ -139,7 +139,7 @@ axios.get('https://9uyf4erjbf.execute-api.us-east-2.amazonaws.com/tts')
                                             </div>
                                             <div className="tokenRight">
                                            
-                                                <span><img src={EthIcon} alt="" />eth</span>
+                                                <span>USD</span>
                                                
                             
                                                 {<span>{Number(tx.value).toFixed(4)}</span>}
