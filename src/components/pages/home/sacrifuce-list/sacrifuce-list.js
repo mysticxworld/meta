@@ -70,7 +70,7 @@ axios.get('https://9uyf4erjbf.execute-api.us-east-2.amazonaws.com/tts')
                 <div className="secrifice_Outer" id="leaderboard">
                     <div className="container">
                         <div className="surfuceHd wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                            <h2>Leader Board<span></span></h2>
+                            <h2>Leaderboard<span></span></h2>
                         </div>
                         <div className="secrificeInn">
                             <div className="secrifiList">
