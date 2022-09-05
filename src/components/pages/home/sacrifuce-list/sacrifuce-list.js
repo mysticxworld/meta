@@ -67,8 +67,11 @@ axios.get('https://9uyf4erjbf.execute-api.us-east-2.amazonaws.com/tts')
 
     return (
             <>
-                <div className="secrifice_Outer" id="scrfList">
+                <div className="secrifice_Outer" id="leaderboard">
                     <div className="container">
+                        <div className="surfuceHd wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                            <h2>Leader Board<span></span></h2>
+                        </div>
                         <div className="secrificeInn">
                             <div className="secrifiList">
                                 <h2>Ethereum</h2>
@@ -130,9 +133,9 @@ axios.get('https://9uyf4erjbf.execute-api.us-east-2.amazonaws.com/tts')
                                             
                                             {tx.type}
                                             
-                                            <a href={"https://rinkeby.etherscan.io/tx/"+tx.id} target="_blank" style={{color:'#fff'}}>
+                                            
                                                 <span>transaction id</span>
-                                                </a>
+                                               
                                             
 
                                                 <strong>{tx.id}</strong>
@@ -157,8 +160,9 @@ axios.get('https://9uyf4erjbf.execute-api.us-east-2.amazonaws.com/tts')
                             
 
                         </div>
-                        </div>
-                    </div>
+                    
+                </div>
+                </div>
                 </div>
             </>
     )

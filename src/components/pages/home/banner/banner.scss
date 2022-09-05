@@ -145,12 +145,13 @@
                             background: #17191C;
                             .tokenLeft {
                                 color: #fff;
-                                strong{
-                                    color: #fff;
-                                }
                                 a{
                                     text-decoration: none !important;
                                 }
+                                strong{
+                                    color: #fff;
+                                }
+                                
                             }
                             .tokenRight {
                                 span{
@@ -402,5 +403,15 @@
                 font-size: 17px;
             }
         }
+    }
+}
+.latestspeci {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    padding-bottom: 10px;
+    @include respond-to(media-xs) {
+        font-size: 22px;
+        padding-bottom: 5px;
     }
 }

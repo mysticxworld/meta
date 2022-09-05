@@ -169,7 +169,7 @@ if (window.ethereum.networkVersion !== chainId) {
                         <SacrificPopup />
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#scrfList" className='active' >{CconnectWallet}</NavLink>
+                        <NavLink  className='active'href="#leaderboard">{CconnectWallet}</NavLink>
                       </NavItem>
                     </Nav>
                   </Collapse>

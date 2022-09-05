@@ -69,7 +69,9 @@ axios.get('https://9uyf4erjbf.execute-api.us-east-2.amazonaws.com/tts')
                     </div>
                     <div className="bannerRight wow slideInRight" data-wow-duration="2s" data-wow-delay=".2s">
                         <div className="tokensListOuter">
+                            
                             <div className="tokensOuter">
+                            <div className='latestspeci'>Latest Sacrifies</div>
                                 <Scrollbars className="tokensScroll">
                                 {txx.map(tx =>(
                                 <ul> 
